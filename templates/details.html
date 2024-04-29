@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Missing Persons Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(to right bottom, #231a6f, #0f054c);
+        color: #fff;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #fff;
+      }
+
+      th {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Missing Persons Details</h1>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Last Seen Location</th>
+        <th>Date Missing</th>
+        <th>Contact Info</th>
+        <th>Additional Info</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+      </tr>
+      {% for person in missing_persons %}
+      <tr>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.gender }}</td>
+        <td>{{ person.last_seen_location }}</td>
+        <td>{{ person.date_missing }}</td>
+        <td>{{ person.contact_info }}</td>
+        <td>{{ person.additional_info }}</td>
+        <td>{{ person.latitude }}</td>
+        <td>{{ person.longitude }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

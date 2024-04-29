@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>God's Eye</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+      type=""
+    />
+    <style>
+      body {
+        background-color: #00204a;
+        color: #ffffff;
+        background: linear-gradient(130deg, #231a6f, #0f054c);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .content {
+        text-align: center;
+        animation: fadeInUp 1s ease forwards;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      h1 {
+        color: #ffffff; /* Optional, overrides body color */
+        font-weight: bold;
+      }
+      p {
+        margin: 20px 0;
+        font-size: 20px;
+      }
+      .info {
+        animation: fadeIn 1s ease forwards;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+        animation: fadeIn 1s ease forwards;
+      }
+      button {
+        background-color: #007fa4;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin: 0 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        animation: fadeIn 1s ease forwards;
+      }
+      button:hover {
+        background-color: #00204a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Welcome to God's Eye &#129309;</h1>
+      <p>
+        Our website aims to help in missing person identification through
+        innovative and creative design.
+      </p>
+      <div class="info">
+        <p>
+          We utilize advanced technology and data analysis to aid in locating
+          missing individuals.
+        </p>
+        <p>
+          Our platform is user-friendly and accessible, providing a seamless
+          experience for both volunteers and authorities.
+        </p>
+      </div>
+      <div class="buttons">
+        <button onclick="window.location.href='/register'">Register</button>
+        <button onclick="window.location.href='/login'">Login</button>
+      </div>
+    </div>
+  </body>
+</html>

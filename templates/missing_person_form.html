@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Missing Person Form</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Missing Person Form</h2>
+        <form
+          id="missingPersonForm"
+          action="/submit"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" required />
+
+          <label for="age">Age:</label>
+          <input type="text" id="age" name="age" required />
+
+          <label for="gender">Gender:</label>
+          <input type="text" id="gender" name="gender" required />
+
+          <label for="lastSeenLocation">Last Seen Location:</label>
+          <input
+            type="text"
+            id="lastSeenLocation"
+            name="lastSeenLocation"
+            required
+          />
+
+          <label for="dateMissing">Date Missing:</label>
+          <input
+            type="text"
+            id="dateMissing"
+            name="dateMissing"
+            placeholder="YYYY-MM-DD"
+            required
+          />
+
+          <label for="contactInfo">Contact Information:</label>
+          <input type="text" id="contactInfo" name="contactInfo" required />
+
+          <label for="additionalInfo">Additional Information:</label>
+          <input type="text" id="additionalInfo" name="additionalInfo" />
+
+          <input
+            type="file"
+            id="photo"
+            name="photo"
+            accept="image/*"
+            onchange="previewImage(event)"
+            required
+          />
+          <label for="photo" class="upload-label">Upload Photo</label>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <div class="photo-container" id="imagePreview"></div>
+    </div>
+
+    <script>
+      function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          var output = document.getElementById("imagePreview");
+          output.innerHTML =
+            '<img src="' + reader.result + '" alt="Uploaded Photo">';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+  </body>
+</html>
